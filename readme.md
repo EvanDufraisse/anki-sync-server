@@ -1,71 +1,87 @@
-# Anki Sync Server - Docker
+# 🚀 Anki Sync Server - Docker
 
-Anki Sync Server is a lightweight and efficient server for synchronizing Anki decks. This server is designed to be a self-hosted alternative to AnkiWeb, allowing users to sync their Anki decks across multiple devices.
+Anki Sync Server is a lightweight, efficient, self-hosted alternative to AnkiWeb for synchronizing your Anki decks across devices. 
 
-This is a Dockerized version of the Anki Sync Server based on the original [Anki Sync Server](https://github.com/ankitects/anki/blob/main/docs/syncserver/Dockerfile.distroless)
+This Dockerized version is built on the original [Anki Sync Server](https://github.com/ankitects/anki/blob/main/docs/syncserver/Dockerfile.distroless), offering an easy-to-deploy, privacy-friendly solution.
 
-## Features
+---
 
-- Lightweigth image based on distroless (less than 50MB)
-- Easy to deploy with Docker Compose
-- Privacy friendly
+## 🌟 Features
 
-## Usage
+- 🪶 **Lightweight**: Minimal image size (< 50MB) based on Distroless.
+- ⚙️ **Easy Deployment**: Set up quickly with Docker Compose.
+- 🛡️ **Privacy-First**: Your data stays with you.
 
-This can be runned either locally, or on your personnal homelab server. Once the service is running you could configure a nginx reverse proxy to access it from the internet, or simply use a reverse SSH tunnel.
+---
 
-## Requirements
+## 📖 Usage
 
-Look the installation guides for your OS:
+Run the server locally or on your homelab. Expose it to the internet securely using:
+- An **NGINX reverse proxy**, or
+- A **reverse SSH tunnel**.
+
+---
+
+## 🛠️ Requirements
+
+Ensure the following are installed:
 
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
 - [Git](https://git-scm.com/)
 
+---
 
-## Installation
+## ⚡ Installation
 
-1. Clone the repository:
-    ```sh
+1. **Clone the repository**:
+    ```bash
     git clone https://github.com/EvanDufraisse/anki-sync-server.git
     cd anki-sync-server
     ```
 
-2. Rename .env.example to .env and set the environment variables:
-    ```sh
+2. **Configure environment variables**:
+    ```bash
     cp .env.example .env
-
-    # Example .env file
-    #HOST_PORT=27701 # Port on host
-    #USERNAME1=admin # Username of the first user
-    #PASSWORD1=admin # Password of the first user
-    #ANKI_FILES_PATH=/path/to/anki/storage/on/host # Path to the Anki storage on host
     ```
 
-3. Build and run the server:
-    ```sh
+    Edit `.env`:
+    ```env
+    HOST_PORT=27701              # Port on the host
+    USERNAME1=admin              # First user
+    PASSWORD1=admin              # User password
+    ANKI_FILES_PATH=/path/to/anki/storage # Path to Anki storage
+    ```
+
+3. **Build and run the server**:
+    ```bash
     docker-compose down && docker-compose up -d
     ```
 
-4. Check the docker container is (healthy):
-    ```sh
+4. **Verify the container is healthy**:
+    ```bash
     docker container ls | grep anki-sync-server
     ```
 
-    If you need to debug:
-    ```sh
+    Debug if necessary:
+    ```bash
     docker logs anki-sync-server
     ```
 
-## TODO:
+---
 
-- [ ] Make the password hash feature work
+## 📝 TODO
 
-## License
+- [ ] Add support for password hashing.
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+---
 
-## Acknowledgements
+## 📜 License
 
-- [Anki](https://apps.ankiweb.net/) - The powerful, intelligent flashcard program.
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
+---
+
+## 🙌 Acknowledgements
+
+- [Anki](https://apps.ankiweb.net/) - The intelligent flashcard program that makes remembering easy.
