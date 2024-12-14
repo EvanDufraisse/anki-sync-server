@@ -42,7 +42,7 @@ Ensure the following are installed:
 
 2. **Configure environment variables**:
     ```bash
-    cp .env.example .env
+    cp .env_example .env
     ```
 
     Edit `.env`:
