@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  anki-sync-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        ANKI_VERSION: "24.11"
+      network: host
+    ports:
+      - "${HOST_PORT}:8080"
+    volumes:
+      - "${ANKI_FILES_PATH}:/app/data"
+    environment:
+      SYNC_USER1: "${USERNAME1}:${PASSWORD_HASH1}"
+      SYNC_BASE: "/app/data"
+    image: anki-sync-server
+    container_name: anki-sync-server
