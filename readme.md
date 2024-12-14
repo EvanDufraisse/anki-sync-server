@@ -53,6 +53,8 @@ Ensure the following are installed:
     ANKI_FILES_PATH=/path/to/anki/storage # Path to Anki storage
     ```
 
+Adding multiple-users should be straitghforward see the [official documentation](https://docs.ankiweb.net/sync-server.html)
+
 3. **Build and run the server**:
     ```bash
     docker-compose down && docker-compose up -d
