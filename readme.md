@@ -4,6 +4,16 @@ Anki Sync Server is a lightweight and efficient server for synchronizing Anki de
 
 This is a Dockerized version of the Anki Sync Server based on the original [Anki Sync Server](https://github.com/ankitects/anki/blob/main/docs/syncserver/Dockerfile.distroless)
 
+## Features
+
+- Lightweigth image based on distroless (less than 50MB)
+- Easy to deploy with Docker Compose
+- Privacy friendly
+
+## Usage
+
+This can be runned either locally, or on your personnal homelab server. Once the service is running you could configure a nginx reverse proxy to access it from the internet, or simply use a reverse SSH tunnel.
+
 ## Requirements
 
 Look the installation guides for your OS:
